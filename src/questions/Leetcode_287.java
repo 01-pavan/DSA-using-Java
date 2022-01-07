@@ -12,20 +12,21 @@ class Leetcode_287 {
     public static int findDuplicate(int[] nums) {
 
         int i=0;
-        while(i< nums.length){
-            int correct = nums[i]-1;
-            if(nums[i]!=nums[correct]){
-                swap(nums,i,correct);
-            }else{
+        while(i< nums.length) {
+            if (i != nums[i] - 1) {
+                int correct = nums[i] - 1;
+                if (nums[i] != nums[correct]) {
+                    swap(nums, i, correct);
+                } else {
+                    return  nums[i];
+                }
+
+            }
+            else{
                 i++;
             }
+        }
 
-        }
-        for(int index =0;index< nums.length;index++){
-            if(index!=nums[index]-1){
-                return  nums[index];
-            }
-        }
         return 0;
     }
     static  void swap(int[] nums,int first,int second){
