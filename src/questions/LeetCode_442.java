@@ -6,7 +6,7 @@ import java.util.List;
 
 class LeetCode_442 {
     public static void main(String[] args) {
-        int[] nums = {4,3,2,7,8,2,3,1};
+        int[] nums = {4,3,2,7,8,2,3,1,9};
 
         System.out.println( findDuplicates(nums));
     }
@@ -22,6 +22,7 @@ class LeetCode_442 {
         }
         List<Integer> list2=new ArrayList<Integer>();
         for (int j = 0; j < nums.length; j++) {
+
             if(nums[j]!=j+1 && nums[j]==nums[nums[j]-1]){
                 list2.add(nums[j]);
             }
